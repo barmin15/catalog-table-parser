@@ -45,3 +45,20 @@ This project contains python scripts to read pdfs tables (mostly for catalogs) a
     ```
     pip install fitz pandas
     ```
+## Code Explanation
+
+### pdfToExcel.py
+
+1. This file uses `fitz` to read, and iterate over the pages in the pdf file. With the help of the `find_tables` built in method, we look for table structures, and extract all the data from the table cells. After the table data is extracted, we look for the title for the table above the by finding the first text element before the table. 
+
+2. After the data is extracted, be insert it into the excel using `panda`.
+
+3. we save the excel with the given name `extracted_tables_with_headers.xlsx`.
+
+### pdfToHtml.py
+
+1. We open the pdf using `pdfplumber` and iterate over the data.
+
+2. We create a html structure, and apppend the pdf data into Html table tags, inside the Html. 
+
+3. We save the Html file with the given name `index.html`.
